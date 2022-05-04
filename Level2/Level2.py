@@ -404,7 +404,39 @@ def solution(brown, yellow):
     return answer
 
 
-
+# 프린터 : 시간 초과가 날 줄 알았지만 다행히 성공을 했다. enumerate 와 any, 그리고 2차원 리스트 생성에 대해 알게 되었다.
+def solution(a, b):
+    answer = 0
+    
+    # 순위가 앞에, 문서 번호가 뒤에 
+    
+    list = [[0]*2 for i in range (len(a))]
+    
+    for i in range(0,len(list)):
+        list[i][0]=a[i]
+        list[i][1]=i
+    
+    for i in range(len(list)):
+        if list[i][1]==b:
+            find = list[i]
+            break
+    
+    while True:
+        if find==list[0] and max(list)[0]==find[0]:
+            answer+=1
+            return answer
+        else:
+            if list[0][0] == max(list)[0]:
+                del list[0]
+                answer+=1
+            else:
+                list.append(list[0])
+                del list[0]
+                
+    
+    
+    
+    return answer
 
 
 
