@@ -439,6 +439,29 @@ def solution(a, b):
     return answer
 
 
+# 예상 대진표 : 생각보다 금방 풀었다. 저번에 풀었던 방법이 기억이 났던 것도 있지만 수학적 접근으로 잘 풀었다.
+def solution(n,a,b):
+    answer = 1
+
+    while True:
+        
+
+        if abs(a-b)==1 and min(a,b)%2!=0:
+            return answer
+        else:
+            answer+=1
+            if a%2==0:
+                a=a/2
+            else:
+                a=(a+1)/2
+        
+            if b%2==0:
+                b=b/2
+            else:
+                b=(b+1)/2
+            
+    return answer
+
 
 
 
